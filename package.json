@@ -15,7 +15,7 @@
     "./MODEL.json": "./MODEL.json"
   },
   "bin": {
-    "svgcap": "./dist/cli.js"
+    "svgcap": "dist/cli.js"
   },
   "files": [
     "dist",
