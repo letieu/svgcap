@@ -1,4 +1,4 @@
-# svgcap
+# @letieu/svgcap
 
 A lightweight, zero-dependency JavaScript package and Command Line Interface (CLI) to **solve** and **train** SVG captchas.
 
@@ -17,14 +17,14 @@ A lightweight, zero-dependency JavaScript package and Command Line Interface (CL
 Install via `npm`:
 
 ```bash
-npm install svgcap
+npm install @letieu/svgcap
 ```
 
 ---
 
 ## Programmatic Usage
 
-`svgcap` supports both ES Modules (ESM) and CommonJS (CJS) natively out of the box.
+`@letieu/svgcap` supports both ES Modules (ESM) and CommonJS (CJS) natively out of the box.
 
 ### 1. Solve a Captcha
 
@@ -32,7 +32,7 @@ By default, `solve` uses a built-in pre-trained model (`defaultModel`) that reso
 
 #### ES Modules (ESM)
 ```javascript
-import { solve } from 'svgcap';
+import { solve } from '@letieu/svgcap';
 
 // Your SVG captcha source string
 const svgString = `<svg ...> ... </svg>`;
@@ -44,7 +44,7 @@ console.log('Solved Captcha:', code);
 
 #### CommonJS (CJS)
 ```javascript
-const { solve } = require('svgcap');
+const { solve } = require('@letieu/svgcap');
 
 // Your SVG captcha source string
 const svgString = `<svg ...> ... </svg>`;
@@ -63,7 +63,7 @@ If you have trained a custom model and saved it as a JSON file, you can pass it 
 #### ES Modules (ESM)
 ```javascript
 import fs from 'fs/promises';
-import { solve } from 'svgcap';
+import { solve } from '@letieu/svgcap';
 
 const svgString = `<svg ...> ... </svg>`;
 
@@ -79,7 +79,7 @@ console.log('Solved Captcha:', code);
 #### CommonJS (CJS)
 ```javascript
 const fs = require('fs/promises');
-const { solve } = require('svgcap');
+const { solve } = require('@letieu/svgcap');
 
 const svgString = `<svg ...> ... </svg>`;
 
@@ -104,7 +104,7 @@ You can train a model programmatically by pointing the `train` function to a fol
 #### ES Modules (ESM)
 ```javascript
 import fs from 'fs/promises';
-import { train } from 'svgcap';
+import { train } from '@letieu/svgcap';
 
 // Train a model from the folder containing labeled SVGs
 const newModel = await train('./path/to/captchas');
@@ -117,7 +117,7 @@ console.log('Model trained and saved successfully!');
 #### CommonJS (CJS)
 ```javascript
 const fs = require('fs/promises');
-const { train } = require('svgcap');
+const { train } = require('@letieu/svgcap');
 
 async function run() {
   // Train a model from the folder containing labeled SVGs
@@ -138,8 +138,8 @@ If you want to map characters of a single SVG captcha to a known answer:
 
 ```javascript
 // ESM
-import { trainSvg } from 'svgcap';
-// CJS: const { trainSvg } = require('svgcap');
+import { trainSvg } from '@letieu/svgcap';
+// CJS: const { trainSvg } = require('@letieu/svgcap');
 
 const svgString = `<svg ...> ... </svg>`;
 const answer = '3EDK9P';
@@ -153,20 +153,20 @@ console.log(singleModelPart);
 
 ## Command Line Interface (CLI)
 
-You can run `svgcap` directly without installing it globally using `npx`.
+You can run the CLI directly without installing it globally using `npx`.
 
 ### 1. Solve an SVG Captcha
 
 Solve a single SVG file using the default model:
 
 ```bash
-npx svgcap solve captcha.svg
+npx @letieu/svgcap solve captcha.svg
 ```
 
 Solve using a custom model file:
 
 ```bash
-npx svgcap solve captcha.svg my-model.json
+npx @letieu/svgcap solve captcha.svg my-model.json
 ```
 
 ### 2. Train a Model
@@ -174,7 +174,7 @@ npx svgcap solve captcha.svg my-model.json
 Generate a pattern model from a directory of labeled SVG captchas:
 
 ```bash
-npx svgcap train ./path/to/captchas [output-model.json]
+npx @letieu/svgcap train ./path/to/captchas [output-model.json]
 ```
 
 *If no output path is provided, it defaults to saving as `MODEL.json` in the current working directory.*
