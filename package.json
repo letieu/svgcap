@@ -1,9 +1,17 @@
 {
   "name": "@letieu/svgcap",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A lightweight JavaScript package and CLI to solve and train SVG captchas",
   "license": "ISC",
-  "author": "",
+  "author": "letieu",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/letieu/svgcap.git"
+  },
+  "bugs": {
+    "url": "https://github.com/letieu/svgcap/issues"
+  },
+  "homepage": "https://github.com/letieu/svgcap#readme",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
