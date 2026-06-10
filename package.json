@@ -1,15 +1,47 @@
 {
   "name": "svgcap",
   "version": "1.0.0",
-  "description": "solve sv",
+  "description": "A lightweight JavaScript package and CLI to solve and train SVG captchas",
   "license": "ISC",
   "author": "",
   "type": "module",
-  "main": "solve.js",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./MODEL.json": "./MODEL.json"
+  },
+  "bin": {
+    "svgcap": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "MODEL.json",
+    "index.js",
+    "solve.js",
+    "train.js",
+    "cli.js"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node build.js",
+    "prepublishOnly": "npm run build",
+    "test": "node test.js"
   },
   "dependencies": {
     "@xmldom/xmldom": "^0.9.10"
-  }
+  },
+  "devDependencies": {
+    "esbuild": "^0.21.4"
+  },
+  "keywords": [
+    "svg",
+    "captcha",
+    "solver",
+    "ocr",
+    "svg-captcha",
+    "train"
+  ]
 }

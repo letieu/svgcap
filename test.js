@@ -12,7 +12,7 @@ for (const file of files) {
   const answer = solve(svgString)
 
   if (answer != realAnswer) {
-    console.log('wrong answer, expect ', realAnser, 'got ', answer)
+    console.log('wrong answer, expect ', realAnswer, 'got ', answer)
     continue
   }
 
